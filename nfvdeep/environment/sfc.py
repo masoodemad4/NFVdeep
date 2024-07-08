@@ -32,4 +32,5 @@ class ServiceFunctionChain:
     def __repr__(self):
         """String representation of the SFC instance."""
         s = " ".join([str([vnf for vnf in self.vnfs])])
+        #print('sfc is',s)
         return s

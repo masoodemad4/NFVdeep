@@ -38,6 +38,7 @@ class ArrivalProcess(Generator):
             len(self.requests) > 0 and self.requests[0][1].arrival_time <= self.timeslot
         ):
             _, sfc = heapq.heappop(self.requests)
+           
             req.append(sfc)
 
         # increment internal timeslot
@@ -89,18 +90,19 @@ class JSONArrivalProcess(ArrivalProcess):
         # load SFCs from specified JSON file
         with open(self.request_path, "rb") as file:
             requests = json.load(file)
-
+        
         def parse_vnfs(vnfs):
             return [tuple(vnf.values()) for vnf in vnfs]
 
         # create SFC objects with parameters specified in the JSON file
         req = []
         for sfc in requests:
+            
             vnfs = parse_vnfs(sfc.pop("vnfs"))
             sfc = ServiceFunctionChain(vnfs=vnfs, **sfc)
 
             req.append(sfc)
-
+        print (req)
         return req
 
 

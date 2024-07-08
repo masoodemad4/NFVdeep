@@ -4,21 +4,23 @@ from collections import Counter
 from networkx.exception import NetworkXNoPath
 
 import networkx as nx
+import matplotlib.pyplot as plt
 
 from nfvdeep.environment.sfc import ServiceFunctionChain
 
 
 class Network:
     def __init__(self, overlay, costs={"cpu": 0.2, "memory": 0.2, "bandwidth": 0.0006}):
-        """Internal representation of the network & embedded VNFs.
+        """representation of the network & embedded VNFs.
 
         Args:
-          overlay (str or networkx graph): Path to an overlay graph that specifies the network's properties
-                or a valid networkx graph.
+          overlay (str or networkx graph): Path to an overlay graph that specifies the network's properties 
+            or a valid networkx graph.
           costs (tuple of float): The cost for one unit of cpu, memory and bandwidth"""
 
         # parse and validate the overlay network
         self.overlay, properties = Network.check_overlay(overlay)
+        #print('properties are:',properties) ## properties are: {'num_nodes': 12, 'num_node_resources': 3}
         self.num_nodes = properties["num_nodes"]
 
         self.timestep = 0
@@ -91,7 +93,6 @@ class Network:
         """Check whether the (partial) SFC embedding satisfies the bandwidth and latency constraints, i.e.
         if the bandwidth demand can be satisfied by ANY node and if the SFC can still satisfy its latency constraints.
         """
-
         # check if there exists a node which can cover the request's bandwidth demand
         resources = self.calculate_resources()
         max_available_bandwidth = max([res["bandwidth"] for res in resources])
@@ -253,11 +254,15 @@ class Network:
 
     @staticmethod
     def check_overlay(overlay):
-        """Checks whether the overlay adhers to the expected parameter types and attributes, returns the parsed network instance."""
+        """Checks whether the overlay adhers to the expected parameter types and attributes, returns the 
+            network instance."""
 
-        # parse overlay from gpickle if
+        # read overlay from gpickle if
         if isinstance(overlay, str) and overlay.endswith(".gpickle"):
             overlay = nx.read_gpickle(overlay)
+            nx.draw(overlay, with_labels=True)
+            plt.savefig("/workspaces/NFVdeep/figures/overlay.png", format="PNG")
+            
 
         node_attributes = {"cpu": int, "memory": float, "bandwidth": float}
         for _, data in overlay.nodes(data=True):
@@ -281,6 +286,8 @@ class Network:
         properties = {}
         properties["num_nodes"] = overlay.number_of_nodes()
         _, resource = next(iter(overlay.nodes(data=True)))
+        #print('node resource', resource) 
+             ## node resource {'cpu': 433, 'memory': 25.27045430802648, 'bandwidth': 890.3536769162939}
         properties["num_node_resources"] = len(resource)
 
         return overlay, properties

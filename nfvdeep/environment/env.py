@@ -12,8 +12,7 @@ from nfvdeep.environment.arrival import ArrivalProcess
 
 class Env(gym.Env):
     def __init__(self, overlay_path, arrival_config):
-        """A new Gym environment. This environment represents the environment of NFVdeep.
-
+        """A new Gym environment.
         Args:
           overlay_path: A connection to the network where the agent will act
           arrival_config: Dictionary that specifies the properties of the requests."""
@@ -23,17 +22,19 @@ class Env(gym.Env):
 
         # define action and statespace
         _, properties = Network.check_overlay(self.overlay_path)
+        #emad print('propertie are:',properties)
         num_nodes = properties["num_nodes"]
         num_node_resources = properties["num_node_resources"]
 
         # action `num_nodes` refers to volutarily rejecting the VNF embedding
         self.action_space = spaces.Discrete(num_nodes + 1)
-
+        #print('self.action_space',self.action_space)
+                # self.action_space Discrete(13)
         obs_dim = num_nodes * num_node_resources + num_node_resources + 3
         self.observation_space = spaces.Box(
             low=0.0, high=1.0, shape=(obs_dim,), dtype=np.float16
         )
-
+        #print('observation_space is:',self.observation_space)
         self.reward = 0
 
     def step(self, action):

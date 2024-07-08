@@ -1,0 +1,120 @@
+Using cpu device
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+Logging to /workspaces/NFVdeep/resuls/logs/PPO_64
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 532      |
+|    ep_rew_mean     | 4.83e+05 |
+| time/              |          |
+|    fps             | 613      |
+|    iterations      | 1        |
+|    time_elapsed    | 3        |
+|    total_timesteps | 2048     |
+---------------------------------
+-------------------------------------------
+| rollout/                |               |
+|    ep_len_mean          | 549           |
+|    ep_rew_mean          | 4.76e+05      |
+| time/                   |               |
+|    fps                  | 538           |
+|    iterations           | 2             |
+|    time_elapsed         | 7             |
+|    total_timesteps      | 4096          |
+| train/                  |               |
+|    approx_kl            | 1.4327496e-05 |
+|    clip_fraction        | 0             |
+|    clip_range           | 0.2           |
+|    entropy_loss         | -2.56         |
+|    explained_variance   | -8.34e-07     |
+|    learning_rate        | 0.0003        |
+|    loss                 | 1.34e+08      |
+|    n_updates            | 10            |
+|    policy_gradient_loss | -0.000218     |
+|    value_loss           | 3.09e+08      |
+-------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 554          |
+|    ep_rew_mean          | 5e+05        |
+| time/                   |              |
+|    fps                  | 505          |
+|    iterations           | 3            |
+|    time_elapsed         | 12           |
+|    total_timesteps      | 6144         |
+| train/                  |              |
+|    approx_kl            | 3.204192e-05 |
+|    clip_fraction        | 0            |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.56        |
+|    explained_variance   | 0            |
+|    learning_rate        | 0.0003       |
+|    loss                 | 1.27e+08     |
+|    n_updates            | 20           |
+|    policy_gradient_loss | -0.000422    |
+|    value_loss           | 2.64e+08     |
+------------------------------------------
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 554          |
+|    ep_rew_mean          | 4.93e+05     |
+| time/                   |              |
+|    fps                  | 491          |
+|    iterations           | 4            |
+|    time_elapsed         | 16           |
+|    total_timesteps      | 8192         |
+| train/                  |              |
+|    approx_kl            | 1.581895e-05 |
+|    clip_fraction        | 0            |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.56        |
+|    explained_variance   | 0            |
+|    learning_rate        | 0.0003       |
+|    loss                 | 1.7e+08      |
+|    n_updates            | 30           |
+|    policy_gradient_loss | -0.000255    |
+|    value_loss           | 3.48e+08     |
+------------------------------------------
+Eval num_timesteps=10000, episode_reward=503172.79 +/- 48615.44
+Episode length: 558.20 +/- 15.10
+------------------------------------------
+| eval/                   |              |
+|    mean_ep_length       | 558          |
+|    mean_reward          | 5.03e+05     |
+| time/                   |              |
+|    total_timesteps      | 10000        |
+| train/                  |              |
+|    approx_kl            | 3.084904e-05 |
+|    clip_fraction        | 0            |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.56        |
+|    explained_variance   | 0            |
+|    learning_rate        | 0.0003       |
+|    loss                 | 1.34e+08     |
+|    n_updates            | 40           |
+|    policy_gradient_loss | -0.000475    |
+|    value_loss           | 2.99e+08     |
+------------------------------------------
+New best mean reward!
+acceptance_ratio 0.4210970464135021
+rejection_ratio 0.5789029535864979
+--------------------------------------------
+| acceptance_ratio              | 0.421    |
+| eval/                         |          |
+|    mean_bandwidth_cost        | 2.62     |
+|    mean_bandwidth_utilization | 269      |
+|    mean_cpu_cost              | 381      |
+|    mean_cpu_utilization       | 110      |
+|    mean_memory_cost           | 56.8     |
+|    mean_memory_utilization    | 607      |
+|    mean_operating_servers     | 7.03     |
+| rejection_ratio               | 0.579    |
+| rollout/                      |          |
+|    ep_len_mean                | 553      |
+|    ep_rew_mean                | 4.86e+05 |
+| time/                         |          |
+|    fps                        | 371      |
+|    iterations                 | 5        |
+|    time_elapsed               | 27       |
+|    total_timesteps            | 10240    |
+--------------------------------------------

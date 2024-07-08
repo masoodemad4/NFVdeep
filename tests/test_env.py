@@ -146,3 +146,4 @@ class NFVDeepTests(unittest.TestCase):
         resources = network.calculate_resources()
         assert resources[1] == {"cpu": 0, "memory": 26.0, "bandwidth": 17.0}
         assert resources[5] == {"cpu": 3, "memory": 0.0, "bandwidth": 27.0}
+        print (resources)

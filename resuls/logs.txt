@@ -1,0 +1,127 @@
+env is <Env instance>
+Using cpu device
+Wrapping the env with a `Monitor` wrapper
+Wrapping the env in a DummyVecEnv.
+properties are: {'num_nodes': 12, 'num_node_resources': 3}
+Logging to /workspaces/NFVdeep/resuls/logs/PPO_27
+-----------------------------
+| time/              |      |
+|    fps             | 702  |
+|    iterations      | 1    |
+|    time_elapsed    | 2    |
+|    total_timesteps | 2048 |
+-----------------------------
+properties are: {'num_nodes': 12, 'num_node_resources': 3}
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 2.51e+03     |
+|    ep_rew_mean          | 4.17e+05     |
+| time/                   |              |
+|    fps                  | 639          |
+|    iterations           | 2            |
+|    time_elapsed         | 6            |
+|    total_timesteps      | 4096         |
+| train/                  |              |
+|    approx_kl            | 0.0011227604 |
+|    clip_fraction        | 0            |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.56        |
+|    explained_variance   | -5.25e-06    |
+|    learning_rate        | 0.0003       |
+|    loss                 | 1.11e+07     |
+|    n_updates            | 10           |
+|    policy_gradient_loss | -0.00237     |
+|    value_loss           | 1.66e+07     |
+------------------------------------------
+properties are: {'num_nodes': 12, 'num_node_resources': 3}
+------------------------------------------
+| rollout/                |              |
+|    ep_len_mean          | 2.53e+03     |
+|    ep_rew_mean          | 4.36e+05     |
+| time/                   |              |
+|    fps                  | 614          |
+|    iterations           | 3            |
+|    time_elapsed         | 9            |
+|    total_timesteps      | 6144         |
+| train/                  |              |
+|    approx_kl            | 0.0007420903 |
+|    clip_fraction        | 0            |
+|    clip_range           | 0.2          |
+|    entropy_loss         | -2.56        |
+|    explained_variance   | 2.38e-07     |
+|    learning_rate        | 0.0003       |
+|    loss                 | 1.39e+07     |
+|    n_updates            | 20           |
+|    policy_gradient_loss | -0.00184     |
+|    value_loss           | 2.67e+07     |
+------------------------------------------
+properties are: {'num_nodes': 12, 'num_node_resources': 3}
+-------------------------------------------
+| rollout/                |               |
+|    ep_len_mean          | 2.52e+03      |
+|    ep_rew_mean          | 4.47e+05      |
+| time/                   |               |
+|    fps                  | 596           |
+|    iterations           | 4             |
+|    time_elapsed         | 13            |
+|    total_timesteps      | 8192          |
+| train/                  |               |
+|    approx_kl            | 0.00083896314 |
+|    clip_fraction        | 0             |
+|    clip_range           | 0.2           |
+|    entropy_loss         | -2.56         |
+|    explained_variance   | 1.19e-07      |
+|    learning_rate        | 0.0003        |
+|    loss                 | 1.33e+07      |
+|    n_updates            | 30            |
+|    policy_gradient_loss | -0.00179      |
+|    value_loss           | 1.88e+07      |
+-------------------------------------------
+properties are: {'num_nodes': 12, 'num_node_resources': 3}
+properties are: {'num_nodes': 12, 'num_node_resources': 3}
+properties are: {'num_nodes': 12, 'num_node_resources': 3}
+properties are: {'num_nodes': 12, 'num_node_resources': 3}
+properties are: {'num_nodes': 12, 'num_node_resources': 3}
+properties are: {'num_nodes': 12, 'num_node_resources': 3}
+Eval num_timesteps=10000, episode_reward=500672.77 +/- 16856.68
+Episode length: 2586.20 +/- 18.87
+-------------------------------------------
+| eval/                   |               |
+|    mean_ep_length       | 2.59e+03      |
+|    mean_reward          | 5.01e+05      |
+| time/                   |               |
+|    total_timesteps      | 10000         |
+| train/                  |               |
+|    approx_kl            | 0.00075161713 |
+|    clip_fraction        | 0             |
+|    clip_range           | 0.2           |
+|    entropy_loss         | -2.56         |
+|    explained_variance   | 0             |
+|    learning_rate        | 0.0003        |
+|    loss                 | 6.97e+06      |
+|    n_updates            | 40            |
+|    policy_gradient_loss | -0.00185      |
+|    value_loss           | 2.05e+07      |
+-------------------------------------------
+New best mean reward!
+properties are: {'num_nodes': 12, 'num_node_resources': 3}
+--------------------------------------------
+| eval/                         |          |
+|    acceptance_ratio           | 0.486    |
+|    mean_bandwidth_cost        | 3.21     |
+|    mean_bandwidth_utilization | 1.81e+03 |
+|    mean_cpu_cost              | 479      |
+|    mean_cpu_utilization       | 670      |
+|    mean_memory_cost           | 69.6     |
+|    mean_memory_utilization    | 3.66e+03 |
+|    mean_operating_servers     | 8.85     |
+|    rejection_ratio            | 0.514    |
+| rollout/                      |          |
+|    ep_len_mean                | 2.53e+03 |
+|    ep_rew_mean                | 4.48e+05 |
+| time/                         |          |
+|    fps                        | 289      |
+|    iterations                 | 5        |
+|    time_elapsed               | 35       |
+|    total_timesteps            | 10240    |
+--------------------------------------------

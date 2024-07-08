@@ -15,13 +15,18 @@ Assuming an Anaconda (version 4.8.4) distribution has already been installed on 
 
 ## Experiments
 The `script.py` file serves as an interface to running either baseline or DRL agents on the NFVdeep environment with their default parameterization, i.e. whithout employing hyperparamter optimization. Here, you can specify the overlay topology and the network's resources, as well as properties of the arrival process. For instance, we may train an stable-baseline's `PPO` DRL agent on the `abilene` network with incoming requests arising from a Poisson process by executing:
+activate the enviroment:
+```console
+source .env/bin/activate
+```
+run the script:
 ```console
 python script.py
  --agent PPO 
- --overlay <data path>/abilene.gpickle 
- --requests <request path>/requests.json 
- --output <output path>
- --logs <log path>
+ --overlay /workspaces/NFVdeep/data/abilene.gpickle 
+ --requests /workspaces/NFVdeep/data/requests.json 
+ --output /workspaces/NFVdeep/resuls
+ --logs /workspaces/NFVdeep/resuls/logs
 ```
 
 ## Hyperparameter Optimization
